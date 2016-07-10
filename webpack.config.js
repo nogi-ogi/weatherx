@@ -23,7 +23,6 @@ const common = {
   },
   output: {
     path: PATHS.build,
-    publicPath: '/weatherx/'
     filename: '[name].js'
   },
   module: {
