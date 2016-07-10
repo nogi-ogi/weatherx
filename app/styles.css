@@ -1,0 +1,36 @@
+html {
+    font-family: sans-serif;
+    -ms-text-size-adjust: 100%;
+    -webkit-text-size-adjust: 100%;
+    height: 100%;
+    -webkit-font-smoothing: antia
+}
+
+body {
+    margin: 0
+}
+
+.entry {
+	margin: 10px;
+}
+
+.module {
+    float: left;
+    width: 100%;
+    max-width: 480px;
+    height: auto;
+    display: block
+}
+
+.tab-inlet {
+	margin: 5px;
+	background-color: cornsilk;
+}
+
+.extended-forecast {
+	margin: 10px;
+}
+
+.forecast {
+	margin: 10px;
+}
