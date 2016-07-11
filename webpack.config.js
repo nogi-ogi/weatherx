@@ -8,7 +8,8 @@ const PATHS = {
   app: path.join(__dirname, 'app'),
   style: [
     path.join(__dirname, 'node_modules', 'bootstrap-css-only'),
-    path.join(__dirname, 'app', 'styles.css')
+    path.join(__dirname, 'app', 'styles.css'),
+    path.join(__dirname, 'app', 'weather-icons.css')
     ],
   build: path.join(__dirname, 'build')
 };

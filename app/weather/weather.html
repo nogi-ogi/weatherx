@@ -1,5 +1,6 @@
 <div class="module" >
 	<section class="entry">
+		<p>Vancouver time: {{weather.currentTime | date:'hh:mm:ss a'}}</p>
 		<label> Enter city name: <input type="text" ng-model="weather.input"></label>
 		<button type="button" class="btn btn-default btn-sm" ng-click="weather.addCity(weather.input)">add City</button>
 	</section>
@@ -7,11 +8,11 @@
 	<uib-tabset active="active">
 		<uib-tab index="$index" ng-repeat="city in weather.cities" heading="{{city.name}}">
 		  <div class="tab-inlet">
-		  	<p>{{city.content.item.condition.date}}</p>
-		  	<p ng-hide="!city.unit">{{city.content.item.condition.temp}}</p>
-		  	<p ng-hide="city.unit">{{city.content.item.condition.tempC}}</p>
+		  	<h1><i ng-class="city.content.item.condition.icon"></i></h1>
+		  	<p ng-hide="!city.unit">Currently {{city.content.item.condition.temp}}F</p>
+		  	<p ng-hide="city.unit">Currently {{city.content.item.condition.tempC}}C</p>
 		  	<p>{{city.content.item.condition.text}}</p>
-		  	<p>{{city.content.lastBuildDate}}</p>
+		  	<p>weather as of {{city.content.lastBuildDate}}</p>
 		  	<button type="button" class="btn btn-default" ng-click="city.isCollapsed = !city.isCollapsed">Display forecast</button>
 		  	<div class="btn-group">
 			    <button class="btn btn-success" ng-model="city.unit" uib-btn-radio="false">C</button>
@@ -24,8 +25,8 @@
 			        <button class="btn btn-success" ng-model="city.singleModel" uib-btn-radio="'10'">10 D</button>
 			    </div>
 			    <div class="forecast">
-					<div ng-hide="!city.unit" ng-repeat="day in city.content.item.forecast | limitTo:city.singleModel ">{{day.low}} {{day.high}}</div>
-					<div ng-hide="city.unit" ng-repeat="day in city.content.item.forecast | limitTo:city.singleModel ">{{day.lowC}}  {{day.highC}}</div>
+					<div ng-hide="!city.unit" ng-repeat="day in city.content.item.forecast | limitTo:city.singleModel ">low: {{day.low}}F, high: {{day.high}}F</div>
+					<div ng-hide="city.unit" ng-repeat="day in city.content.item.forecast | limitTo:city.singleModel ">low: {{day.lowC}}C, high: {{day.highC}}C</div>
 				</div>
 			</div>
 			</div>
