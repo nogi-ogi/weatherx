@@ -1,6 +1,6 @@
 <div class="module" >
 	<section class="entry">
-		<p>Vancouver time: {{weather.currentTime | date:'hh:mm:ss a'}}</p>
+		<p>Vancouver time: {{weather.currentTime | date:'yyyy-MM-dd HH:mm:ss a'}}</p>
 		<label> Enter city name: <input type="text" ng-model="weather.input"></label>
 		<button type="button" class="btn btn-default btn-sm" ng-click="weather.addCity(weather.input)">add City</button>
 	</section>
